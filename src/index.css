@@ -1,0 +1,121 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-paper text-ink font-body;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background: #ffe500;
+    color: #0a0a0a;
+  }
+
+  input, textarea {
+    @apply font-body;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center gap-2 px-6 py-3 bg-ink text-paper font-body font-semibold text-sm uppercase tracking-widest border-2 border-ink shadow-hard transition-all duration-150 hover:-translate-y-0.5 hover:shadow-hard-lg active:translate-y-0 active:shadow-hard-sm cursor-pointer select-none;
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center gap-2 px-6 py-3 bg-transparent text-ink font-body font-semibold text-sm uppercase tracking-widest border-2 border-ink shadow-hard transition-all duration-150 hover:bg-ink hover:text-paper hover:-translate-y-0.5 hover:shadow-hard-lg active:translate-y-0 cursor-pointer select-none;
+  }
+
+  .btn-yellow {
+    @apply inline-flex items-center gap-2 px-6 py-3 bg-yellow text-ink font-body font-semibold text-sm uppercase tracking-widest border-2 border-ink shadow-hard transition-all duration-150 hover:-translate-y-0.5 hover:shadow-hard-lg active:translate-y-0 cursor-pointer select-none;
+  }
+
+  .card {
+    @apply bg-cream border-2 border-ink shadow-hard;
+  }
+
+  .input-field {
+    @apply w-full px-4 py-3 bg-paper border-2 border-ink font-body text-sm focus:outline-none focus:ring-0 focus:border-blue transition-colors placeholder:text-muted;
+  }
+
+  .textarea-field {
+    @apply w-full px-4 py-3 bg-paper border-2 border-ink font-body text-sm focus:outline-none focus:ring-0 focus:border-blue transition-colors resize-none placeholder:text-muted;
+  }
+
+  .section-label {
+    @apply font-hand text-muted text-lg;
+  }
+
+  .display-text {
+    @apply font-display tracking-wide;
+  }
+}
+
+@layer utilities {
+  .border-hard {
+    border: 2px solid #0a0a0a;
+  }
+
+  .text-stroke {
+    -webkit-text-stroke: 1px #0a0a0a;
+  }
+
+  .writing-vertical {
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+  }
+
+  .mask-edge {
+    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  }
+}
+
+/* Marquee */
+.marquee-container {
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.marquee-track {
+  display: inline-flex;
+  animation: marquee 30s linear infinite;
+}
+
+/* Doodle float */
+.doodle-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+.doodle-float-slow {
+  animation: float 7s ease-in-out infinite;
+}
+
+/* Canvas */
+canvas {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  image-rendering: auto;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #f5f4ef;
+}
+::-webkit-scrollbar-thumb {
+  background: #0a0a0a;
+}
