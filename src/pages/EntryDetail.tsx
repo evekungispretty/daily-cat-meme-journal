@@ -83,7 +83,7 @@ export default function EntryDetail() {
               <ArrowRight size={14} />
             </Link>
           )}
-          <span className="font-hand text-muted text-sm ml-1">
+          <span className="font-hand text-muted text-lg ml-1">
             {entryIndex + 1} / {entries.length}
           </span>
         </div>
@@ -195,7 +195,7 @@ export default function EntryDetail() {
 
             {/* Title */}
             <div>
-              <p className="font-hand text-muted text-sm mb-1">— {formatDate(entry.date)}</p>
+              <p className="font-hand text-muted text-lg mb-1">— {formatDate(entry.date)}</p>
               <h1 className="font-display text-4xl sm:text-5xl tracking-wide leading-tight">
                 {entry.title}
               </h1>
@@ -204,7 +204,7 @@ export default function EntryDetail() {
             {/* Journal text */}
             {entry.journalText ? (
               <div className="border-l-4 border-yellow pl-4">
-                <p className="font-hand text-xl leading-relaxed text-ink whitespace-pre-wrap">
+                <p className="font-hand text-lg leading-relaxed text-ink whitespace-pre-wrap">
                   {entry.journalText}
                 </p>
               </div>
@@ -215,7 +215,7 @@ export default function EntryDetail() {
             {/* Tags */}
             {entry.tags.length > 0 && (
               <div>
-                <p className="font-hand text-muted text-sm mb-2">tagged as</p>
+                <p className="font-hand text-muted text-lg mb-2">tagged as</p>
                 <div className="flex flex-wrap gap-2">
                   {entry.tags.map((tag) => (
                     <span

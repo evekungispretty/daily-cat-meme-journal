@@ -73,7 +73,7 @@ export default function EntryCard({ entry, onFavorite, index = 0, compact = fals
           {/* Card content */}
           <div className="p-3">
             <div className="flex items-center justify-between mb-1.5">
-              <span className="font-hand text-muted text-sm">{formatDateShort(entry.date)}</span>
+              <span className="font-hand text-muted text-lg">{formatDateShort(entry.date)}</span>
               <span className="font-body text-[10px] font-semibold uppercase tracking-widest text-muted">
                 {entry.mood}
               </span>
@@ -82,7 +82,7 @@ export default function EntryCard({ entry, onFavorite, index = 0, compact = fals
               {entry.title}
             </h3>
             {!compact && entry.journalText && (
-              <p className="font-hand text-muted text-sm leading-snug line-clamp-2">
+              <p className="font-hand text-muted text-lg leading-snug line-clamp-2">
                 {entry.journalText}
               </p>
             )}
@@ -95,7 +95,7 @@ export default function EntryCard({ entry, onFavorite, index = 0, compact = fals
                   </span>
                 ))}
                 {entry.tags.length > 3 && (
-                  <span className="font-hand text-xs text-muted">+{entry.tags.length - 3}</span>
+                  <span className="font-hand text-lg text-muted">+{entry.tags.length - 3}</span>
                 )}
               </div>
             )}

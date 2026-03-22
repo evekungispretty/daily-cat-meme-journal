@@ -27,7 +27,7 @@ export default function Navbar() {
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2 group">
             <span className="font-display text-2xl tracking-wider leading-none">DCMJ</span>
-            <span className="hidden sm:inline font-hand text-muted text-sm mt-0.5">
+            <span className="hidden sm:inline font-hand text-muted text-lg mt-0.5">
               daily cat meme journal
             </span>
           </Link>
@@ -58,7 +58,7 @@ export default function Navbar() {
 
           {/* Date */}
           <div className="hidden sm:flex items-center gap-2">
-            <span className="font-hand text-muted text-sm">{today}</span>
+            <span className="font-hand text-muted text-lg">{today}</span>
             <Link
               to="/generate"
               className="btn-primary text-xs px-4 py-2"

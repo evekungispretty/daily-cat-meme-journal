@@ -35,8 +35,8 @@ export default function Hero() {
     <section className="relative overflow-hidden border-b-2 border-ink min-h-[90vh] flex flex-col">
       {/* Issue label */}
       <div className="border-b-2 border-ink px-6 py-2 flex items-center justify-between">
-        <span className="font-hand text-muted text-sm">★ The official feline emotional archive</span>
-        <span className="font-hand text-muted text-sm">Issue №001 — Today</span>
+        <span className="font-hand text-muted text-lg">★ The official feline emotional archive</span>
+        <span className="font-hand text-muted text-lg">Issue №001 — Today</span>
       </div>
 
       {/* Main hero grid */}
@@ -77,7 +77,7 @@ export default function Hero() {
 
           <motion.p
             variants={itemVariants}
-            className="mt-8 font-hand text-xl text-ink max-w-sm leading-relaxed"
+            className="mt-8 font-hand text-lg text-ink max-w-sm leading-relaxed"
           >
             "One meme a day keeps the breakdown manageable."
           </motion.p>
@@ -102,7 +102,7 @@ export default function Hero() {
 
           <motion.div variants={itemVariants} className="mt-6 flex items-center gap-3">
             <ArrowDoodle />
-            <span className="font-hand text-muted text-sm">no sign-up needed. just you and your cat.</span>
+            <span className="font-hand text-muted text-lg">no sign-up needed. just you and your cat.</span>
           </motion.div>
         </motion.div>
 
@@ -155,7 +155,7 @@ export default function Hero() {
               {/* Card footer */}
               <div className="p-3">
                 <div className="flex items-center justify-between">
-                  <span className="font-hand text-muted text-sm">{sampleCard.date}</span>
+                  <span className="font-hand text-muted text-lg">{sampleCard.date}</span>
                   <div className="flex items-center gap-1">
                     <span>{sampleCard.mood}</span>
                     <span className="font-body text-xs text-muted uppercase tracking-wide">{sampleCard.moodLabel}</span>

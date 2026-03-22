@@ -61,15 +61,15 @@ export default function Journal() {
               >
                 <div>
                   <p className="font-display text-3xl">{entries.length}</p>
-                  <p className="font-hand text-muted text-sm">total entries</p>
+                  <p className="font-hand text-muted text-lg">total entries</p>
                 </div>
                 <div>
                   <p className="font-display text-3xl">{streak}</p>
-                  <p className="font-hand text-muted text-sm">day streak</p>
+                  <p className="font-hand text-muted text-lg">day streak</p>
                 </div>
                 <div>
                   <p className="font-display text-3xl">{entries.filter((e) => e.isFavorite).length}</p>
-                  <p className="font-hand text-muted text-sm">favorites</p>
+                  <p className="font-hand text-muted text-lg">favorites</p>
                 </div>
                 <div>
                   <p className="font-display text-3xl">
@@ -82,7 +82,7 @@ export default function Journal() {
                       ).sort(([, a], [, b]) => b - a)[0][0] as Mood
                     ]?.emoji : '—'}
                   </p>
-                  <p className="font-hand text-muted text-sm">top mood</p>
+                  <p className="font-hand text-muted text-lg">top mood</p>
                 </div>
               </motion.div>
             )}
@@ -169,7 +169,7 @@ export default function Journal() {
             </motion.div>
             <div>
               <h2 className="font-display text-4xl sm:text-5xl tracking-wide mb-3">YOUR JOURNAL AWAITS</h2>
-              <p className="font-hand text-muted text-xl max-w-sm mx-auto leading-relaxed">
+              <p className="font-hand text-muted text-lg max-w-sm mx-auto leading-relaxed">
                 No entries yet. Your cat has been living rent-free in your space. It's time they earn their keep.
               </p>
             </div>
@@ -181,7 +181,7 @@ export default function Journal() {
           /* No results */
           <div className="min-h-[40vh] flex flex-col items-center justify-center text-center gap-4">
             <span className="text-5xl">🔍</span>
-            <p className="font-hand text-muted text-xl">No entries matching this filter.</p>
+            <p className="font-hand text-muted text-lg">No entries matching this filter.</p>
             <button
               onClick={() => setFilterMood('all')}
               type="button"
@@ -227,13 +227,13 @@ export default function Journal() {
                   </div>
                   <div className="flex-1 min-w-0">
                     <div className="flex items-center justify-between gap-2 mb-1">
-                      <span className="font-hand text-muted text-sm">{entry.date}</span>
+                      <span className="font-hand text-muted text-lg">{entry.date}</span>
                       <span className="font-body text-xs uppercase tracking-widest text-muted">
                         {MOOD_CONFIG[entry.mood]?.emoji} {entry.mood}
                       </span>
                     </div>
                     <h3 className="font-body font-semibold text-sm uppercase tracking-wide mb-1 truncate">{entry.title}</h3>
-                    <p className="font-hand text-muted text-base line-clamp-1">{entry.journalText}</p>
+                    <p className="font-hand text-muted text-lg line-clamp-1">{entry.journalText}</p>
                   </div>
                 </Link>
               </motion.div>

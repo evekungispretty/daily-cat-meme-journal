@@ -13,7 +13,7 @@ const moods = Object.entries(MOOD_CONFIG) as [Mood, typeof MOOD_CONFIG[Mood]][];
 export default function MoodSelector({ selected, onChange, label = "today's mood" }: MoodSelectorProps) {
   return (
     <div>
-      <p className="font-hand text-muted text-sm mb-3">{label}</p>
+      <p className="font-hand text-muted text-lg mb-3">{label}</p>
       <div className="flex flex-wrap gap-2">
         {moods.map(([mood, config]) => {
           const isSelected = selected === mood;

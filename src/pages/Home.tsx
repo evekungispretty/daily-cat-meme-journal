@@ -74,7 +74,7 @@ export default function Home() {
           <FloatingSticker className="absolute left-0 top-0" delay={0.5}>
             <CatFaceDoodle size={48} className="opacity-30" />
           </FloatingSticker>
-          <p className="font-hand text-2xl sm:text-3xl text-paper/90 leading-relaxed mb-4">
+          <p className="font-hand text-lg text-paper/90 leading-relaxed mb-4">
             "A daily journal, but make it feline and emotionally unstable."
           </p>
           <WavyLine color="#ffe500" className="max-w-xs mx-auto" />
@@ -114,7 +114,7 @@ export default function Home() {
               >
                 <span className="text-3xl block mb-3">{f.icon}</span>
                 <h3 className="font-display text-xl tracking-wide mb-2">{f.title}</h3>
-                <p className="font-hand text-muted text-base">{f.desc}</p>
+                <p className="font-hand text-muted text-lg">{f.desc}</p>
               </motion.div>
             ))}
           </div>
@@ -134,7 +134,7 @@ export default function Home() {
             <br />
             WAITING
           </h2>
-          <p className="font-hand text-muted text-xl mb-8 max-w-md mx-auto">
+          <p className="font-hand text-muted text-lg mb-8 max-w-md mx-auto">
             They've been judging you for free this whole time. Now put them to work.
           </p>
           <Link to="/generate" className="btn-yellow text-lg px-10 py-4">
@@ -147,7 +147,7 @@ export default function Home() {
       <footer className="border-t-2 border-ink py-8 px-6">
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
           <span className="font-display text-xl tracking-widest">DCMJ</span>
-          <p className="font-hand text-muted text-sm text-center">
+          <p className="font-hand text-muted text-lg text-center">
             Made with cat chaos energy. Your data stays on your device.
           </p>
           <div className="flex gap-4">

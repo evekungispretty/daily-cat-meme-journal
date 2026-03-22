@@ -46,7 +46,7 @@ export default function JournalForm({ onSave, onCancel, isLoading = false }: Jou
     >
       {/* Title */}
       <div>
-        <label className="block font-hand text-sm text-muted mb-1">entry title</label>
+        <label className="block font-hand text-lg text-muted mb-1">entry title</label>
         <input
           type="text"
           value={title}
@@ -59,7 +59,7 @@ export default function JournalForm({ onSave, onCancel, isLoading = false }: Jou
 
       {/* Journal text */}
       <div>
-        <label className="block font-hand text-sm text-muted mb-1">what actually happened today</label>
+        <label className="block font-hand text-lg text-muted mb-1">what actually happened today</label>
         <textarea
           value={journalText}
           onChange={(e) => setJournalText(e.target.value)}
@@ -67,7 +67,7 @@ export default function JournalForm({ onSave, onCancel, isLoading = false }: Jou
           className="textarea-field h-32"
           maxLength={1000}
         />
-        <p className="text-right font-hand text-xs text-muted mt-1">{journalText.length}/1000</p>
+        <p className="text-right font-hand text-lg text-muted mt-1">{journalText.length}/1000</p>
       </div>
 
       {/* Mood selector */}
@@ -75,7 +75,7 @@ export default function JournalForm({ onSave, onCancel, isLoading = false }: Jou
 
       {/* Tags */}
       <div>
-        <p className="font-hand text-muted text-sm mb-3">tag this entry</p>
+        <p className="font-hand text-muted text-lg mb-3">tag this entry</p>
         <div className="flex flex-wrap gap-2">
           {ALL_TAGS.map((tag) => (
             <button
@@ -112,7 +112,7 @@ export default function JournalForm({ onSave, onCancel, isLoading = false }: Jou
       </div>
 
       {!mood && (
-        <p className="font-hand text-muted text-sm text-center">
+        <p className="font-hand text-muted text-lg text-center">
           pick a mood to save your entry ↑
         </p>
       )}

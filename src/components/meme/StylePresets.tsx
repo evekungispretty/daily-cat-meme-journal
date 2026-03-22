@@ -10,7 +10,7 @@ interface StylePresetsProps {
 export default function StylePresets({ selected, onChange }: StylePresetsProps) {
   return (
     <div>
-      <p className="font-hand text-muted text-sm mb-3">choose your energy</p>
+      <p className="font-hand text-muted text-lg mb-3">choose your energy</p>
       <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
         {STYLE_PRESETS.map((preset) => {
           const isSelected = selected === preset.id;
@@ -29,7 +29,7 @@ export default function StylePresets({ selected, onChange }: StylePresetsProps) 
               `}
             >
               <div className="font-display text-sm tracking-widest">{preset.label}</div>
-              <div className={`font-hand text-xs mt-0.5 ${isSelected ? 'text-paper/70' : 'text-muted'}`}>
+              <div className={`font-hand text-lg mt-0.5 ${isSelected ? 'text-paper/70' : 'text-muted'}`}>
                 {preset.description}
               </div>
             </motion.button>
