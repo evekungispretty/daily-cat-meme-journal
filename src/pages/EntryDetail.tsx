@@ -1,17 +1,20 @@
 import { useParams, useNavigate, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowLeft, ArrowRight, Heart, Download, Trash2, X } from 'lucide-react';
-import { useState } from 'react';
+import { useState, useCallback } from 'react';
 import PageTransition from '../components/layout/PageTransition';
 import { getEntries, getEntryById, toggleFavorite, deleteEntry, formatDate } from '../utils/storage';
 import { MOOD_CONFIG } from '../types';
 import Button from '../components/ui/Button';
+import MemeCanvas from '../components/meme/MemeCanvas';
 
 export default function EntryDetail() {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
   const [isFav, setIsFav] = useState(() => getEntryById(id ?? '')?.isFavorite ?? false);
   const [showDeleteConfirm, setShowDeleteConfirm] = useState(false);
+  const [memeDataUrl, setMemeDataUrl] = useState('');
+  const handleCanvasReady = useCallback((dataUrl: string) => setMemeDataUrl(dataUrl), []);
 
   const entries = getEntries();
   const entryIndex = entries.findIndex((e) => e.id === id);
@@ -46,9 +49,9 @@ export default function EntryDetail() {
   };
 
   const downloadMeme = () => {
-    if (!entry.memeImageDataUrl) return;
+    if (!memeDataUrl) return;
     const a = document.createElement('a');
-    a.href = entry.memeImageDataUrl;
+    a.href = memeDataUrl;
     a.download = `cat-meme-${entry.date}.jpg`;
     a.click();
   };
@@ -143,11 +146,13 @@ export default function EntryDetail() {
                 className="border-2 border-ink overflow-hidden"
                 style={{ boxShadow: `6px 6px 0px ${moodConfig.color}` }}
               >
-                {entry.memeImageDataUrl ? (
-                  <img
-                    src={entry.memeImageDataUrl}
-                    alt="cat meme"
-                    className="w-full aspect-square object-cover"
+                {entry.sourceImageUrl ? (
+                  <MemeCanvas
+                    imageSrc={entry.sourceImageUrl}
+                    topText={entry.topText}
+                    bottomText={entry.bottomText}
+                    style={entry.style}
+                    onCanvasReady={handleCanvasReady}
                   />
                 ) : (
                   <div className="w-full aspect-square bg-cream flex items-center justify-center">

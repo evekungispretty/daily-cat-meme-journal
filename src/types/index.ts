@@ -33,7 +33,7 @@ export interface JournalEntry {
   id: string;
   date: string; // YYYY-MM-DD
   createdAt: number;
-  memeImageDataUrl: string;
+  memeImageDataUrl?: string;
   sourceImageUrl: string;
   topText: string;
   bottomText: string;
@@ -130,73 +130,52 @@ export const ALL_TAGS: Tag[] = [
 
 export const SAMPLE_CATS = [
   {
-    id: 'orange',
-    url: 'https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=600&q=80',
-    label: 'The Classic',
-    defaultTop: 'MONDAYS BE LIKE',
-    defaultBottom: 'send help',
+    id: 'smiling-cat',
+    url: '/cat-memes/smiling-cat.jpg',
+    label: 'Smiling Cat',
+    defaultTop: 'EVERYTHING IS FINE',
+    defaultBottom: 'everything is not fine',
   },
   {
-    id: 'white',
-    url: 'https://images.unsplash.com/photo-1573865526739-10659fec78a5?w=600&q=80',
-    label: 'The Philosopher',
-    defaultTop: 'WHAT IS EVEN',
-    defaultBottom: 'the point',
+    id: 'screaming-cat',
+    url: '/cat-memes/screaming-cat.jpg',
+    label: 'Screaming Cat',
+    defaultTop: 'ME WHEN THE ALARM GOES OFF',
+    defaultBottom: 'every single morning',
   },
   {
-    id: 'tabby',
-    url: 'https://images.unsplash.com/photo-1529778873920-4da4926a72c2?w=600&q=80',
-    label: 'The Dramatic',
-    defaultTop: 'ME EVERY MORNING',
-    defaultBottom: 'vs me after coffee',
+    id: 'laptop-cat',
+    url: '/cat-memes/laptop-cat.jpg',
+    label: 'Laptop Cat',
+    defaultTop: 'WORKING FROM HOME',
+    defaultBottom: 'they said it would be fun',
   },
   {
-    id: 'serious',
-    url: 'https://images.unsplash.com/photo-1513245543132-31f507417b26?w=600&q=80',
-    label: 'The Judge',
-    defaultTop: 'YOUR DECISIONS',
-    defaultBottom: 'disappoint me',
+    id: 'shocked-cat',
+    url: '/cat-memes/shocked-cat.jpg',
+    label: 'Shocked Cat',
+    defaultTop: 'YOU DID WHAT',
+    defaultBottom: 'on a monday????',
   },
   {
-    id: 'sleepy',
-    url: 'https://images.unsplash.com/photo-1495360010541-f48722b34f7d?w=600&q=80',
-    label: 'The Mood',
-    defaultTop: 'PRODUCTIVITY',
-    defaultBottom: 'has left the chat',
-  },
-  {
-    id: 'crying',
-    url: 'https://images.unsplash.com/photo-1592194996308-7b43878e84a6?w=600&q=80',
-    label: 'Crying Cat',
-    defaultTop: 'ME TRYING TO BE OKAY',
-    defaultBottom: 'i am fine (i am not fine)',
-  },
-  {
-    id: 'smudge',
-    url: 'https://images.unsplash.com/photo-1578897367009-1c29da5e2f98?w=600&q=80',
-    label: 'Smudge at Dinner',
-    defaultTop: 'NO I DON\'T WANT YOUR SALAD',
-    defaultBottom: 'absolutely not',
-  },
-  {
-    id: 'grumpy',
-    url: 'https://images.unsplash.com/photo-1548247416-ec66f4900b2e?w=600&q=80',
+    id: 'grumpy-cat',
+    url: '/cat-memes/grumpy-cat.png',
     label: 'Grumpy Cat',
     defaultTop: 'HAD A GOOD TIME ONCE',
     defaultBottom: 'it was awful',
   },
   {
-    id: 'keyboard',
-    url: 'https://images.unsplash.com/photo-1511044568932-338ceba04787?w=600&q=80',
-    label: 'Keyboard Cat',
-    defaultTop: 'WHEN THE DEADLINE IS TODAY',
-    defaultBottom: '♪ dun dun dun dun ♪',
+    id: 'sad-cat',
+    url: '/cat-memes/sad-cat.jpg',
+    label: 'Sad Cat',
+    defaultTop: 'ME AFTER CHECKING MY BANK ACCOUNT',
+    defaultBottom: 'just vibing in the void',
   },
   {
-    id: 'shocked',
-    url: 'https://images.unsplash.com/photo-1574158622682-e40e69881006?w=600&q=80',
-    label: 'Shocked Cat',
-    defaultTop: 'YOU DID WHAT',
-    defaultBottom: 'on a monday????',
+    id: 'crying-cat',
+    url: '/cat-memes/crying-cat.jpg',
+    label: 'Crying Cat',
+    defaultTop: 'ME TRYING TO BE OKAY',
+    defaultBottom: 'i am fine (i am not fine)',
   },
 ];

@@ -103,7 +103,6 @@ export default function Generator() {
       id: generateId(),
       date: getTodayDate(),
       createdAt: Date.now(),
-      memeImageDataUrl: currentMemeDataUrl,
       sourceImageUrl: selectedImage,
       topText,
       bottomText,
@@ -171,9 +170,9 @@ export default function Generator() {
 
         {/* Cat horoscope strip */}
         <div className="border-b-2 border-ink bg-yellow/30 px-6 sm:px-10 lg:px-16 py-3">
-          <div className="max-w-7xl mx-auto flex items-start gap-3">
-            <span className="font-display text-sm tracking-widest shrink-0 mt-0.5">★ CAT HOROSCOPE:</span>
-            <p className="font-hand text-lg text-ink leading-relaxed">{horoscope}</p>
+          <div className="max-w-7xl mx-auto flex justify-center items-center gap-3">
+            <span className="font-display text-lg tracking-widest shrink-0 mt-0.5">★ CAT HOROSCOPE:</span>
+            <p className="font-hand text-2xl text-ink leading-relaxed">{horoscope}</p>
           </div>
         </div>
       </div>

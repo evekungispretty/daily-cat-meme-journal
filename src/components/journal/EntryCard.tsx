@@ -49,9 +49,9 @@ export default function EntryCard({ entry, onFavorite, index = 0, compact = fals
         <Link to={`/journal/${entry.id}`} className="block">
           {/* Meme image */}
           <div className="relative border-b-2 border-ink overflow-hidden" style={{ aspectRatio: '1' }}>
-            {entry.memeImageDataUrl ? (
+            {entry.sourceImageUrl ? (
               <img
-                src={entry.memeImageDataUrl}
+                src={entry.sourceImageUrl}
                 alt="cat meme"
                 className="w-full h-full object-cover"
                 loading="lazy"
