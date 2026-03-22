@@ -71,7 +71,8 @@ export default function Generator() {
     try {
       const res = await fetch('https://api.thecatapi.com/v1/images/search');
       const [data] = await res.json();
-      setSelectedImage(data.url);
+      const proxied = `/api/proxy-image?url=${encodeURIComponent(data.url)}`;
+      setSelectedImage(proxied);
       setSelectedSampleId(null);
     } catch {
       // fallback to local samples if fetch fails
@@ -142,7 +143,7 @@ export default function Generator() {
             className="text-center"
           >
             <h2 className="font-display text-5xl tracking-wide mb-2">SAVED!</h2>
-            <p className="font-hand text-muted text-xl">Adding to your journal...</p>
+            <p className="font-hand text-muted text-lg">Adding to your journal...</p>
           </motion.div>
         </div>
       </PageTransition>
@@ -283,7 +284,7 @@ export default function Generator() {
                   />
                 </div>
                 <div>
-                  <label className="block font-hand text-sm text-muted mb-1">bottom text</label>
+                  <label className="block font-hand text-lg text-muted mb-1">bottom text</label>
                   <input
                     type="text"
                     value={bottomText}

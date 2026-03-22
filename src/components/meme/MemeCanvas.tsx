@@ -52,7 +52,7 @@ export default function MemeCanvas({
         <canvas
           ref={canvasRef}
           className="block w-full aspect-square"
-          style={{ maxWidth: 520 }}
+          style={{ maxWidth: '100%' }}
         />
         {/* Loading overlay */}
         {isDrawing && (
