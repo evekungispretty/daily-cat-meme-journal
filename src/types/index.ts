@@ -178,4 +178,11 @@ export const SAMPLE_CATS = [
     defaultTop: 'ME TRYING TO BE OKAY',
     defaultBottom: 'i am fine (i am not fine)',
   },
+  {
+    id: 'aw-cat',
+    url: '/cat-memes/aw-cat.png',
+    label: 'Aw Cat',
+    defaultTop: 'MY CRUSG EXISTING',
+    defaultBottom: 'sending me to a coma',
+  },
 ];
