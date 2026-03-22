@@ -30,6 +30,7 @@ export default function Generator() {
   const [saved, setSaved] = useState(false);
   const [horoscope] = useState(() => CAT_HOROSCOPES[Math.floor(Math.random() * CAT_HOROSCOPES.length)]);
   const [dragOver, setDragOver] = useState(false);
+  const [isLoadingWebCat, setIsLoadingWebCat] = useState(false);
 
   const handleFileUpload = (file: File) => {
     const reader = new FileReader();
@@ -65,9 +66,20 @@ export default function Generator() {
     setBottomText(pick.bottom);
   };
 
-  const randomSample = () => {
-    const pick = SAMPLE_CATS[Math.floor(Math.random() * SAMPLE_CATS.length)];
-    handleSampleSelect(pick);
+  const randomSample = async () => {
+    setIsLoadingWebCat(true);
+    try {
+      const res = await fetch('https://api.thecatapi.com/v1/images/search');
+      const [data] = await res.json();
+      setSelectedImage(data.url);
+      setSelectedSampleId(null);
+    } catch {
+      // fallback to local samples if fetch fails
+      const pick = SAMPLE_CATS[Math.floor(Math.random() * SAMPLE_CATS.length)];
+      handleSampleSelect(pick);
+    } finally {
+      setIsLoadingWebCat(false);
+    }
   };
 
   const handleCanvasReady = useCallback((dataUrl: string) => {
@@ -160,7 +172,7 @@ export default function Generator() {
         <div className="border-b-2 border-ink bg-yellow/30 px-6 sm:px-10 lg:px-16 py-3">
           <div className="max-w-7xl mx-auto flex items-start gap-3">
             <span className="font-display text-sm tracking-widest shrink-0 mt-0.5">★ CAT HOROSCOPE:</span>
-            <p className="font-hand text-sm text-ink leading-relaxed">{horoscope}</p>
+            <p className="font-hand text-lg text-ink leading-relaxed">{horoscope}</p>
           </div>
         </div>
       </div>
@@ -194,7 +206,7 @@ export default function Generator() {
                 <p className="font-body text-sm font-semibold uppercase tracking-widest text-muted">
                   Drop or click to upload
                 </p>
-                <p className="font-hand text-sm text-muted mt-1">your cat photo goes here</p>
+                <p className="font-hand text-lg text-muted mt-1">your cat photo goes here</p>
                 <input
                   ref={fileInputRef}
                   type="file"
@@ -210,14 +222,15 @@ export default function Generator() {
               {/* Sample cats */}
               <div>
                 <div className="flex items-center justify-between mb-2">
-                  <p className="font-hand text-muted text-sm">or choose a sample cat</p>
+                  <p className="font-hand text-muted text-lg">or choose a sample cat</p>
                   <button
                     onClick={randomSample}
                     type="button"
-                    className="flex items-center gap-1 font-body text-xs uppercase tracking-widest text-muted hover:text-ink transition-colors"
+                    disabled={isLoadingWebCat}
+                    className="flex items-center gap-1 font-body text-xs uppercase tracking-widest text-muted hover:text-ink transition-colors disabled:opacity-50"
                   >
-                    <RefreshCw size={10} />
-                    Random
+                    <RefreshCw size={10} className={isLoadingWebCat ? 'animate-spin' : ''} />
+                    {isLoadingWebCat ? 'Loading...' : 'Random'}
                   </button>
                 </div>
                 <div className="grid grid-cols-5 gap-2">
@@ -259,7 +272,7 @@ export default function Generator() {
 
               <div className="space-y-3">
                 <div>
-                  <label className="block font-hand text-sm text-muted mb-1">top text</label>
+                  <label className="block font-hand text-lg text-muted mb-1">top text</label>
                   <input
                     type="text"
                     value={topText}
@@ -356,7 +369,7 @@ export default function Generator() {
                       >
                         <div className="flex items-center gap-2 mb-4 pb-3 border-b-2 border-ink">
                           <span className="font-display text-xl tracking-wide">JOURNAL ENTRY</span>
-                          <span className="font-hand text-muted text-sm">— complete your entry</span>
+                          <span className="font-hand text-muted text-lg">— complete your entry</span>
                         </div>
                         <JournalForm
                           onSave={handleSave}

@@ -40,6 +40,8 @@ export default function Button({
       `}
       disabled={disabled}
       {...(props as any)}
-    />
+    >
+      {children}
+    </motion.button>
   );
 }
