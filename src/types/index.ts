@@ -152,7 +152,7 @@ export const SAMPLE_CATS = [
   },
   {
     id: 'shocked-cat',
-    url: '/cat-memes/shocked-cat.jpg',
+    url: '/cat-memes/shocked-cat.jpeg',
     label: 'Shocked Cat',
     defaultTop: 'YOU DID WHAT',
     defaultBottom: 'on a monday????',
