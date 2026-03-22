@@ -233,7 +233,7 @@ export default function Generator() {
                     {isLoadingWebCat ? 'Loading...' : 'Random'}
                   </button>
                 </div>
-                <div className="grid grid-cols-5 gap-2 max-h-40 overflow-y-auto pr-1">
+                <div className="grid grid-cols-5 gap-2 max-h-80 overflow-y-auto pr-1">
                   {SAMPLE_CATS.map((cat) => (
                     <button
                       key={cat.id}

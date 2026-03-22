@@ -54,7 +54,7 @@
   }
 
   .section-label {
-    @apply font-hand text-muted text-xl;
+    @apply font-hand text-muted text-2xl;
   }
 
   .display-text {

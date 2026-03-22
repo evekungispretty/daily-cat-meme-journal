@@ -50,7 +50,7 @@ export default function SampleCards() {
         {/* Header */}
         <div className="flex items-end justify-between mb-12">
           <div>
-            <p className="font-hand text-muted text-lg mb-1">— from the archive</p>
+            <p className="font-hand text-muted text-2xl mb-1">— from the archive</p>
             <h2 className="font-display text-5xl sm:text-6xl tracking-wide">RECENT ENTRIES</h2>
           </div>
           <Link
@@ -104,12 +104,12 @@ export default function SampleCards() {
                 {/* Card body */}
                 <div className="p-4">
                   <div className="flex items-center justify-between mb-2">
-                    <span className="font-hand text-muted text-lg">{entry.date}</span>
+                    <span className="font-hand text-muted text-2xl">{entry.date}</span>
                   </div>
                   <h3 className="font-body font-semibold text-sm uppercase tracking-wide mb-1 line-clamp-1">
                     {entry.title}
                   </h3>
-                  <p className="font-hand text-muted text-lg leading-snug line-clamp-2">
+                  <p className="font-hand text-muted text-2xl leading-snug line-clamp-2">
                     {entry.snippet}
                   </p>
                 </div>

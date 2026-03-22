@@ -185,4 +185,18 @@ export const SAMPLE_CATS = [
     defaultTop: 'MY CRUSG EXISTING',
     defaultBottom: 'sending me to a coma',
   },
+  {
+    id: 'sideeye-cat',
+    url: '/cat-memes/cat-sideeye.jpg',
+    label: 'Side eye Cat',
+    defaultTop: 'WHEN SOMEONE SAYS THEY DONT LIKE CATS',
+    defaultBottom: 'are you sure about that',
+  },
+  {
+    id: 'cat-milk',
+    url: '/cat-memes/cat-milk.jpg',
+    label: 'Cat Milk',
+    defaultTop: 'When you given your all',
+    defaultBottom: 'But it is only Tuesday',
+  },
 ];
